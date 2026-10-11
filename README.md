@@ -6,24 +6,23 @@
 3.本地大模型部署验证：使用 LM Studio 成功在本地部署 Qwen2.5-0.5B-Instruct 轻量级模型。
 完成模型加载及初步对话测试，验证本地环境可正常作为 Model Provider 运行。<img width="1706" height="1279" alt="599b83a24e55c270e44b3e6a52328329" src="https://github.com/user-attachments/assets/7983327a-3236-4aca-9871-f2033cfd28b0" />
 
-
 #搭建智能体，并通过API的形式，接入到自己的应用中（cli）
 1.尝试dify海外网站连不上，用的扣子网页版，搭建智能体华农二面编程问题解答助手并部署<img width="1706" height="1279" alt="4ae36a46caa855662610d3ff8ff01fa7" src="https://github.com/user-attachments/assets/5640b82d-7dfb-4fa7-8247-6130189394a5" />，一路顺利。
 2.然后卡在API，上b站专门搜扣子api的相关教程，结合扣子本身给予的入门讲解制作得到API Token,和专属网址url,去 扣子开放平台 API 文档 申请个人访问令牌（PAT）。通过python脚本成功调用扣子API，完成了CLI形式的应用接入。在vs code 里安装插件python<img width="1706" height="1279" alt="77e27381f5fe0effa81feb935535c3fe" src="https://github.com/user-attachments/assets/2e9dc1a1-8933-4316-92d3-f79b4386c823" />
 ，然后在vs code里新建一个test.py（python）文件，并在终端中运行python文件<img width="1706" height="1279" alt="8ed41d68d39e6ee465828d987a5a90ba" src="https://github.com/user-attachments/assets/b4da5f34-a5db-4791-9b09-c39a5c34095f" />简单介绍一下里面写了啥：在代码里写了“请简单介绍自己，ai回复为纯文本
 
-#
-
-
-
-
-
-
-
-
-
-
-
+#yolo跑通完成ultrailtics一次训练
+成果：在纯 CPU 的笔记本上完成一次完整训练 —— 5 个 epoch，mAP50 达 0.878，
+单张图片推理 66 毫秒。产出 best.pt（5.5MB）及训练曲线、预测效果图。
+<img width="1706" height="1279" alt="e9a14d1f6946b779de96778d374a10b7" src="https://github.com/user-attachments/assets/7547a495-badd-4ef8-a03f-b002b6624846" /><img width="1706" height="1279" alt="efc07dc7dab0bfd84d542e66f5da4276" src="https://github.com/user-attachments/assets/9be32815-4369-43ca-8286-8acf2c715c72" />
+环境与数据：Windows + Anaconda（Python 环境）+ Ultralytics 官方库；
+因电脑无显卡，选最小的 yolo11n 模型 + 官方 coco8 迷你数据集（8张自带标注），epochs=5、imgsz=640，控制单次训练十几分钟跑完。
+问题解决：
+1.字母 L 冒充数字 1 ,模型名打成 yolo1ln.pt，报"找不到文件"，终端字体下两者一模一样 ,盯着报错信息逐字符比对，发现是 L 不是 1
+2.漏命令前缀 ,直接敲 yolo11n.pt data=... 报"不是内部或外部命令" 补全 `yolo train model=` 完整结构 
+3.命令里的路径和文件真实位置对不上,cd 进文件夹报"找不到路径"，但文件管理器里明明看得见, 查明是 OneDrive 同步把桌面实际搬到了 OneDrive 文件夹下；改用地址栏显示的真实路径（后来项目直接放 D 盘，一劳永逸)
+你以为的地址：  C:\Users\HUAWEI\桌面\yolo_demo     ← 文件管理器显示的名字
+真实的地址：    C:\Users\HUAWEI\OneDrive\桌面\yolo_demo   ← 文件实际在这
 
 
 #yolo实时推理部署
