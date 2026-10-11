@@ -40,7 +40,7 @@ yolo train model=yolo11n.pt data=coco8.yaml epochs=5 imgsz=640
 
 
 #yolo跑通：接入web应用
-1.主要用Gradio把yolo推理封装成web应用，让模型做到别人也能用到成果，用gradio把python函数自动生成网页界面<img width="1706" height="1279" alt="36d7dfcfb390b8db8dde4caaf0fc5c74" src="https://github.com/user-attachments/assets/34b2d1cb-8ff7-4909-b4cd-43a0fa660be7" />
+1.主要用Gradio把yolo推理封装成web应用，让模型做到别人也能用到成果，用gradio把python函数(诚实声明:脚本的编写借助了 AI 辅助)自动生成网页界面<img width="1706" height="1279" alt="36d7dfcfb390b8db8dde4caaf0fc5c74" src="https://github.com/user-attachments/assets/34b2d1cb-8ff7-4909-b4cd-43a0fa660be7" />
 2.因为window的安全机制把torch_python.dll拦截报错所以直接强制重装了torch(通过在anadacon prompt里执行C:\Users\HUAWEI\anaconda3\envs\yolo\python.exe -m pip install --force-reinstall torch torchvision -i https://pypi.tuna.tsinghua.edu.cn/simple)<img width="1080" height="1440" alt="b5299ae0290b2eaa7d6f98ddc5b08493" src="https://github.com/user-attachments/assets/6278d2c9-0784-4b75-aa13-c18ef16e9fc3" />
 
 #以上三个任务总结：1是训练大脑，作为主要工作人员，2实施推理部署（本地验证）3web应用（对外服务）
