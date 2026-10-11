@@ -53,7 +53,8 @@ yolo train model=yolo11n.pt data=coco8.yaml epochs=5 imgsz=640
 问题 1：终端运行时报"找不到文件 harness.py" 原因：终端当前目录与文件所在目录不一致（文件在桌面）解决：使用 cd Desktop 切换到文件所在目录
 问题 2：程序退出后直接向终端输入中文，被 Windows 命令行当成命令报错 原因：程序已结束，输入时机不对  解决：先运行程序，在其提问提示出现后再输入问题 
 <img width="1706" height="1279" alt="4193d07807471dac3bc2d26cb2d1a0bb" src="https://github.com/user-attachments/assets/c38c830e-a941-4903-a5d6-e77477dd8313" />
-将 Harness 流程做成可视化网页![Uploading 893678cfb499eece9858cfaf78fd71ed.jpg…]()
+将 Harness 流程做成可视化网页<img width="1279" height="1706" alt="893678cfb499eece9858cfaf78fd71ed" src="https://github.com/user-attachments/assets/6dbb91ff-8b42-458a-babc-474e59be1b96" />
+
 
 
 
