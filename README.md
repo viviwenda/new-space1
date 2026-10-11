@@ -46,4 +46,25 @@ yolo train model=yolo11n.pt data=coco8.yaml epochs=5 imgsz=640
 
 #以上三个任务总结：1是训练大脑，作为主要工作人员，2实施推理部署（本地验证）3web应用（对外服务）
 
+#迷你harness搭建
+查阅资料，理解 Harness 的本质：一个把 LLM 包装成 Agent 的循环框架
+总结：LLM 只动嘴（决定调用哪个工具），框架动手（真正执行）  确定最小方案：只实现两个工具（计算器、时钟）
+在 VSCode 中编写 harness.py，约 60 行
+问题 1：终端运行时报"找不到文件 harness.py" 原因：终端当前目录与文件所在目录不一致（文件在桌面）解决：使用 cd Desktop 切换到文件所在目录
+问题 2：程序退出后直接向终端输入中文，被 Windows 命令行当成命令报错 原因：程序已结束，输入时机不对  解决：先运行程序，在其提问提示出现后再输入问题 
+<img width="1706" height="1279" alt="4193d07807471dac3bc2d26cb2d1a0bb" src="https://github.com/user-attachments/assets/c38c830e-a941-4903-a5d6-e77477dd8313" />
+将 Harness 流程做成可视化网页![Uploading 893678cfb499eece9858cfaf78fd71ed.jpg…]()
+
+
+
+
+
+
+
+
+
+
+
+
+
 
