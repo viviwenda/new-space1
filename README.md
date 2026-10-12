@@ -12,11 +12,13 @@
 ，然后在vs code里新建一个test.py（python）文件，并在终端中运行python文件<img width="1706" height="1279" alt="8ed41d68d39e6ee465828d987a5a90ba" src="https://github.com/user-attachments/assets/b4da5f34-a5db-4791-9b09-c39a5c34095f" />简单介绍一下里面写了啥：在代码里写了“请简单介绍自己，ai回复为纯文本
 
 #yolo跑通完成ultrailtics一次训练
-成果：在纯 CPU 的笔记本上完成一次完整训练 —— 5 个 epoch，mAP50 达 0.878，
-单张图片推理 66 毫秒。产出 best.pt（5.5MB）及训练曲线、预测效果图。
+成果：在纯 CPU 的笔记本上根据教程图片<img width="1279" height="1706" alt="25a3c71e616a236271e77601c0577841" src="https://github.com/user-attachments/assets/572ec001-166d-4d35-b6f1-68e2cb949167" />
+和ai解答完成一次完整训练<img width="1706" height="1279" alt="6071819cd727cc3edf1573f57be82f32" src="https://github.com/user-attachments/assets/c4be7f27-98c3-4f6d-88ea-4e84168895b7" />
+<img width="1706" height="1279" alt="f4db8cfdb661c5be2b99e96746ec26ab" src="https://github.com/user-attachments/assets/08cfcb86-92fd-45d1-9f18-c8d93d3e98dd" />
+ 产出 训练曲线、预测效果图。
 <img width="1706" height="1279" alt="e9a14d1f6946b779de96778d374a10b7" src="https://github.com/user-attachments/assets/7547a495-badd-4ef8-a03f-b002b6624846" /><img width="1706" height="1279" alt="efc07dc7dab0bfd84d542e66f5da4276" src="https://github.com/user-attachments/assets/9be32815-4369-43ca-8286-8acf2c715c72" />
 环境与数据：Windows + Anaconda（Python 环境）+ Ultralytics 官方库；
-因电脑无显卡，选最小的 yolo11n 模型 + 官方 coco8 迷你数据集（8张自带标注），epochs=5、imgsz=640，控制单次训练十几分钟跑完。
+因电脑无显卡，选最小的 yolo11n 模型 + 官方 coco8 迷你数据集（8张自带标注），epochs=5、imgsz=640，控制单次训练十几分钟跑完,训练完实测单张图片推理66毫秒。
 问题解决：
 1.字母 L 冒充数字 1 ,模型名打成 yolo1ln.pt，报"找不到文件"，终端字体下两者一模一样 ,盯着报错信息逐字符比对，发现是 L 不是 1
 2.漏命令前缀 ,直接敲 yolo11n.pt data=... 报"不是内部或外部命令" 补全 `yolo train model=` 完整结构 
