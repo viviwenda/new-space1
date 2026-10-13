@@ -28,9 +28,8 @@
 
 
 #yolo实时推理部署
-1. 要做什么
-让训练好的 YOLO11n 模型"动起来"：调用笔记本摄像头，对画面逐帧检测、实时画框。选型：YOLO11n（CPU 上跑得动的最轻量模型）+ OpenCV 视觉 + 本地 Python 脚本。
-2. 跑通最小流程：核心就是一个循环：读帧 → 推理 → 画框 → 显示。中间报错多次，比如下载时yolo11n.pt报错，问kimi说它本该自动从 GitHub 下载，但你的网络连不上 GitHub，下载失败,让我下WATT网络加速器假装自己是GitHub。结果还是不行，换了一个ai,问minimax说把WATT关掉，因为里面SSL证书是自签的python不认，搞得我一团乱麻，然后全部推翻重来。经历询问各种ai对比试验，各种报错，最后是这三条成功整出一个模糊的镜头，以下是图片<img width="1279" height="1706" alt="cb99e8357ee95693df2a40787fe93139" src="https://github.com/user-attachments/assets/706c4be8-a58d-4c4a-8d65-e8c9c97508a8" />
+1. 要做什么：让训练好的 YOLO11n 模型"动起来"：调用笔记本摄像头，对画面逐帧检测、实时画框。选型：YOLO11n（CPU 上跑得动的最轻量模型）+ OpenCV 视觉 + 本地 Python 脚本。
+2. 跑通最小流程：核心就是一个循环：读帧 → 推理 → 画框 → 显示。中间报错多次，比如从GitHub上下载yolo11n.pt报错，问kimi说它本该自动从 GitHub 下载，但你的网络连不上 GitHub，下载失败,让我下WATT网络加速器当中间人，用自签的证书，python不认，结果还是不行，换了ai问minimax说把WATT关掉，因为里面SSL证书是自签的python不认，所以手动下载，在ultralytics官方的GitHub仓库里找下载地址，文件大概5.4MB，然后把yolo11n.pt复制到跑命令的那个文件夹，经历询问各种ai对比试验，各种报错，最后是这三条成功整出一个模糊的镜头，以下是图片<img width="1279" height="1706" alt="cb99e8357ee95693df2a40787fe93139" src="https://github.com/user-attachments/assets/706c4be8-a58d-4c4a-8d65-e8c9c97508a8" />
 conda activate yolo
 cd C:\Users\HUAMEI
 yolo train model=yolo11n.pt data=coco8.yaml epochs=5 imgsz=640
